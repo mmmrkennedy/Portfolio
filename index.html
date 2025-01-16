@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mark Kennedy's Portfolio</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="/css/global_solver.css">
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+  <base target="_blank">
+</head>
+<body>
+
+<h2 class="title-text">Mark Kennedy's Portfolio</h2>
+<div class="top_buttons_background_box"></div>
+
+<div class="smooth-scroll">
+  <!-- Legend to other parts -->
+  <div class="content-container-top">
+    <h2>Resume</h2>
+    <div class="content-container">
+      <ul>
+        <li>Hello, my name is Mark Kennedy. I'm currently looking for full-time employment in an entry-level programmer position. I'm eager to join a dynamic team where I can be an asset to the organization.</li>
+        <li>I graduated from Queen's University in Kingston, On with a Bachelor of Computing, BCmp. I was also a member of the Queen’s Quantum Computing Club from Sept. 2023 to Apr. 2024.</li>
+        <li>Through school, I learned Python and Java. I also know HTML, CSS, and JS, which I'm largely self-taught.</li>
+      </ul>
+    </div>
+
+    <h2>Personal Projects</h2>
+    <div class="content-container">
+      <h3>Discord Sports Bot --- Link to Github Repo available upon request (due to some sensitive info in there)</h3>
+      <ul>
+        <li>This is a Python-based Discord bot that gathers and announces sports game information (such as schedules, scores, live game data, and standings) using various sports APIs (e.g., NHL-API, NBA-API). The data being handled is usually in the form of JSONs, which are being both read and written to.</li>
+        <li>It uses discord.py and asyncio for asynchronous programming to handle live real-time data (such as sending messages based on the live game state), commands from users, and scheduled announcements.</li>
+        <li>It can also use the Py library Selenium to automatically find and stream a sports game's broadcast (on, for example, Sportsnet or TSN) to a discord channel. The program can navigate website, log in, and activate a stream to the discord channel of either a game that is starting soon or a game that a user requests via a command.</li>
+        <li>Currently, the Bot can handle NHL, NBA, NFL, and MLB games.</li>
+      </ul>
+
+      <p><strong>Example Announcement Message:</strong></p>
+      <img src="/img/sports_bot.png" alt="Announcement Message" style="width:50%; height:50%;">
+    </div>
+
+    <div class="content-container">
+      <h3>Static Video Game Guide Website --- <a href="https://mmmrkennedy.github.io/zombiesGuidesPublic/">Link to Website</a> or <a href="https://github.com/mmmrkennedy/zombiesGuidesPublic">Link to Github Repo</a></h3>
+      <ul>
+        <li>A static website built from scratch to host video game guides, using HTML, CSS, and JavaScript.</li>
+        <li>I use GitHub for version control and deploy the website using GitHub Pages.</li>
+        <li>On some pages of the website, there are interactable widgets used to help a user solve in-game puzzles. These are programmed using JS.</li>
+        <li>The project is partially open-source, with some guides being written by other people, but the coding of the website is all done by me.</li>
+      </ul>
+
+      <p><strong>Here is one of the interactable puzzle solvers:</strong></p>
+      <ul>
+        <li>One image per row can be clicked to be selected and clicked again to be unselected. Once one image in each row is selected, the solver will automatically process which pictures were clicked and return the necessary code to solve the puzzle.</li>
+      </ul>
+      <div class="solver-container">
+        <h2>Input Symbols</h2>
+
+        <div class="solver-symbol-select" id="xSymbols">
+          <p>X Symbol:</p>
+          <img src="img/solver_images/beamsmasher/0.webp" alt="X0" onclick="selectSymbol('X', 0, this)">
+          <img src="img/solver_images/beamsmasher/10.webp" alt="X10" onclick="selectSymbol('X', 10, this)">
+          <img src="img/solver_images/beamsmasher/11.webp" alt="X11" onclick="selectSymbol('X', 11, this)">
+          <img src="img/solver_images/beamsmasher/20.webp" alt="X20" onclick="selectSymbol('X', 20, this)">
+          <img src="img/solver_images/beamsmasher/21.webp" alt="X21" onclick="selectSymbol('X', 21, this)">
+          <img src="img/solver_images/beamsmasher/22.webp" alt="X22" onclick="selectSymbol('X', 22, this)">
+        </div>
+
+        <div class="solver-symbol-select" id="ySymbols">
+          <p>Y Symbol:</p>
+          <img src="img/solver_images/beamsmasher/0.webp" alt="Y0" onclick="selectSymbol('Y', 0, this)">
+          <img src="img/solver_images/beamsmasher/10.webp" alt="Y10" onclick="selectSymbol('Y', 10, this)">
+          <img src="img/solver_images/beamsmasher/11.webp" alt="Y11" onclick="selectSymbol('Y', 11, this)">
+          <img src="img/solver_images/beamsmasher/20.webp" alt="Y20" onclick="selectSymbol('Y', 20, this)">
+          <img src="img/solver_images/beamsmasher/21.webp" alt="Y21" onclick="selectSymbol('Y', 21, this)">
+          <img src="img/solver_images/beamsmasher/22.webp" alt="Y22" onclick="selectSymbol('Y', 22, this)">
+        </div>
+
+        <div class="solver-symbol-select" id="zSymbols">
+          <p>Z Symbol:</p>
+          <img src="img/solver_images/beamsmasher/0.webp" alt="Z0" onclick="selectSymbol('Z', 0, this)">
+          <img src="img/solver_images/beamsmasher/10.webp" alt="Z10" onclick="selectSymbol('Z', 10, this)">
+          <img src="img/solver_images/beamsmasher/11.webp" alt="Z11" onclick="selectSymbol('Z', 11, this)">
+          <img src="img/solver_images/beamsmasher/20.webp" alt="Z20" onclick="selectSymbol('Z', 20, this)">
+          <img src="img/solver_images/beamsmasher/21.webp" alt="Z21" onclick="selectSymbol('Z', 21, this)">
+          <img src="img/solver_images/beamsmasher/22.webp" alt="Z22" onclick="selectSymbol('Z', 22, this)">
+        </div>
+
+        <div class="solver-output" id="codeOutput">
+          <p>Code: <span id="solver_code">N/A</span></p>
+        </div>
+        <button class="solver-button" onclick="resetAll()">Reset All</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+<script src="/js/terminus_ww_solver.js"></script>
+</html>
